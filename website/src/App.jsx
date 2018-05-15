@@ -59,7 +59,7 @@ const classes = {
 
 	headerBlock1: "bg-grey-lightest pb-4",
 	headerBlock2: "bg-white py-2 shadow-md",
-	header: "container mx-auto px-2 max-w-lg flex items-center",
+	header: "container mx-auto p-2 max-w-lg flex items-center",
 
 	navLeft: "flex-1 list-reset",
 	navLeftItem: "inline-block mr-8",
@@ -69,8 +69,8 @@ const classes = {
 	navRight: "flex-1 list-reset text-right flex justify-end",
 	navRightItem: "inline-block px-2 text-center",
 
-	brand: "brand text-black no-underline text-5xl font-black",
-	      navLink: "no-underline px-3 py-2 lowercase font-light text-grey-dark rounded border border-white hover:border-grey",
+	brand: "brand text-black no-underline text-4xl font-black",
+	navLink: "no-underline px-3 py-2 lowercase font-light text-grey-dark rounded border border-white hover:border-grey-light",
 	navLinkActive: "no-underline px-3 py-2 lowercase font-light text-grey-lightest bg-blue rounded",
 
 	contentBlock: "bg-grey-lightest py-4",

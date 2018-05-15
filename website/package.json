@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "dotenv": "^5.0.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^4.0.0-beta.21",
@@ -19,6 +20,7 @@
     "react-static": "^5.8.5"
   },
   "devDependencies": {
+    "@types/dotenv": "^4.0.3",
     "eslint-config-react-tools": "1.x.x",
     "serve": "^6.1.0",
     "tailwindcss": "^0.5.2"
