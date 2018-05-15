@@ -1,4 +1,9 @@
 {
-    "title": "Imagem",
-    "tabs": []
+    "title": "Imagens",
+    "tabs": [{
+        "title": "PT",
+        "fields": [
+            { "key": "title_pt", "label": "Título", "type": "text" }
+        ]
+    }]
 }
