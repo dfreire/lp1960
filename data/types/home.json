@@ -1,0 +1,9 @@
+{
+    "title": "Home",
+    "tabs": [{
+        "title": "PT",
+        "fields": [
+            { "key": "title_pt", "label": "Título", "type": "text" }
+        ]
+    }]
+}
