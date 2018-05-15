@@ -1,0 +1,9 @@
+{
+    "title": "Imagem",
+    "tabs": [{
+        "title": "PT",
+        "fields": [
+            { "key": "image", "label": "Imagem", "type": "image" }
+        ]
+    }]
+}

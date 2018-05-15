@@ -1,0 +1,9 @@
+{
+    "title": "Texto",
+    "tabs": [{
+        "title": "PT",
+        "fields": [
+            { "key": "text", "label": "Texto", "type": "textarea" }
+        ]
+    }]
+}
