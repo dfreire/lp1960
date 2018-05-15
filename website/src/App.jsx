@@ -70,8 +70,8 @@ const classes = {
 	navRightItem: "inline-block px-2 text-center",
 
 	brand: "brand text-black no-underline text-5xl font-black",
-	navLink: "no-underline lowercase font-light text-grey-dark hover:uppercase hover:font-normal",
-	navLinkActive: "no-underline text-black uppercase font-normal",
+	      navLink: "no-underline px-3 py-2 lowercase font-light text-grey-dark rounded border border-white hover:border-grey",
+	navLinkActive: "no-underline px-3 py-2 lowercase font-light text-grey-lightest bg-blue rounded",
 
 	contentBlock: "bg-grey-lightest py-4",
 	content: "container mx-auto px-2 max-w-lg",
