@@ -1,0 +1,23 @@
+{
+    "title": "LP1960",
+    "loginPage": {
+        "emailField": "Email",
+        "passwordField": "Password",
+        "loginButton": "Login"
+    },
+    "contentPage": {
+        "saveButton": "Gravar",
+        "cancelButton": "Cancelar"
+    },
+    "createDirModal": {
+        "title": "Adicionar",
+        "nameField": "Nome",
+        "typeField": "Tipo",
+        "saveButton": "Gravar"
+    },
+    "updateDirModal": {
+        "title": "Modificar",
+        "nameField": "Nome",
+        "saveButton": "Gravar"
+    }
+}
