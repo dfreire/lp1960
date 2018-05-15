@@ -4,7 +4,7 @@
         "title": "PT",
         "fields": [
             { "key": "title_pt", "label": "Título", "type": "text" },
-            { "key": "image", "label": "Imagem", "type": "image" }
+            { "key": "image", "label": "Imagem", "type": "image", "width": 800 }
         ]
     }]
 }
