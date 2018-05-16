@@ -8,18 +8,21 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    /* Background color of the footer */
     background-color: #3d4852;
 }
 
 #root {
     min-height: 100%;
     position: relative;
+    /* Background color of the content */
     background-color: #f8fafc;
     /* Height of the footer */
     padding-bottom: 60px;
 }
 
 .contentBlock {
+    /* Background color of the content */
     background-color: #f8fafc;
 }
 
@@ -28,5 +31,6 @@ body {
     bottom: 0;
     /* Height of the footer */
     height: 60px;
+    /* Background color of the footer */
     background-color: #3d4852;
 }
