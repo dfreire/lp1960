@@ -53,7 +53,7 @@ const AppContent = withRouter(withSiteData((props) => {
 }));
 
 const classes = {
-	page: "h-full bg-black",
+	page: "w-full h-full",
 
 	headerBlock1: "bg-grey-lightest pb-4",
 	headerBlock2: "bg-white py-2 shadow-md",
@@ -71,10 +71,10 @@ const classes = {
 	navLink: "no-underline px-3 py-2 lowercase font-light text-grey-dark rounded border border-white hover:border-grey-light",
 	navLinkActive: "no-underline px-3 py-2 lowercase font-light text-grey-lightest bg-blue rounded",
 
-	contentBlock: "bg-grey-lightest py-4",
+	contentBlock: "contentBlock py-4",
 	content: "container mx-auto px-2 max-w-lg",
 
-	footerBlock: "py-4 h-24",
+	footerBlock: "footerBlock bg-grey-darkest w-full py-4",
 	footer: "container mx-auto px-2 max-w-lg text-center",
 	footerLink: "no-underline text-grey-light text-sm hover:text-white",
 };

@@ -4856,13 +4856,31 @@ button,
 /* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
 
 html,
-body,
-#root {
+body {
+  margin: 0;
+  padding: 0;
   height: 100%;
+  background-color: #3d4852;
 }
 
-.brand {
-  /* font-family: 'Roboto', sans-serif; */
+#root {
+  min-height: 100%;
+  position: relative;
+  background-color: #f8fafc;
+  /* Height of the footer */
+  padding-bottom: 60px;
+}
+
+.contentBlock {
+  background-color: #f8fafc;
+}
+
+.footerBlock {
+  position: absolute;
+  bottom: 0;
+  /* Height of the footer */
+  height: 60px;
+  background-color: #3d4852;
 }
 
 @media (min-width: 576px) {
