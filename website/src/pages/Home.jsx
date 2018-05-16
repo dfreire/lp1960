@@ -1,9 +1,10 @@
 import React from 'react'
-import { withSiteData } from 'react-static'
+import { withSiteData, withRouteData } from 'react-static'
+const md = require('markdown-it')('commonmark');
 
-export default withSiteData((props) => (
+export default withSiteData(withRouteData((props) => (
 	<div>
-		<h1>Home</h1>
-		{JSON.stringify(props)}
+		<h1>{props.introPage.fields.title_pt}</h1>
+		<div dangerouslySetInnerHTML={{ __html: md.render(props.introPage.fields.text) }} />
 	</div>
-))
+)))
