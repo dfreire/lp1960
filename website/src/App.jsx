@@ -1,10 +1,10 @@
 import React from 'react'
-import { Router, Link, withRouter } from 'react-static'
+import { Router, Link, withRouter, withSiteData } from 'react-static'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
 
 const links = [
-	{ to: '/', name: 'intro' },
+	{ to: '/intro', name: 'intro' },
 	{ to: '/imagens', name: 'imagens' },
 	{ to: '/projectos', name: 'projectos' },
 ];
@@ -15,17 +15,16 @@ const App = () => (
 	</Router>
 );
 
-const AppContent = withRouter((props) => {
-	links.forEach(link => link.className = link.to === props.location.pathname ? classes.navLinkActive : classes.navLink);
+const AppContent = withRouter(withSiteData((props) => {
+	links.forEach(link => link.className = props.location.pathname.startsWith(link.to) ? classes.navLinkActive : classes.navLink);
 
 	return (
 		<div className={classes.page}>
-			{console.log('props', props)}
 			<div className={classes.headerBlock1}>
 				<div className={classes.headerBlock2}>
 					<div className={classes.header}>
 						<div className={classes.navLeft}>
-							<Link className={classes.brand} to="/">LP1960</Link>
+							<Link className={classes.brand} to="/">{props.title}</Link>
 						</div>
 						<ul className={classes.navRight}>
 							{links.map(link => (
@@ -51,8 +50,7 @@ const AppContent = withRouter((props) => {
 			</div>
 		</div>
 	);
-});
-
+}));
 
 const classes = {
 	page: "h-full bg-black",

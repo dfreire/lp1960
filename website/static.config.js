@@ -12,7 +12,7 @@ export default {
 			data: root
 		} = await axios.get('https://conteudo.lp1960.com/api/content');
 		return {
-			root
+			title: root.fields.title_pt,
 		}
 	},
 	getRoutes: async () => {
@@ -59,6 +59,9 @@ export default {
 		return [{
 				path: '/',
 				component: 'src/pages/Home.jsx',
+			}, {
+				path: '/intro',
+				component: 'src/pages/Intro.jsx',
 				getData: () => ({
 					text: introPage.fields.text,
 				}),

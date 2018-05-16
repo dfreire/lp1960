@@ -1,9 +1,6 @@
 import React from 'react'
-import { withSiteData, withRouteData } from 'react-static'
-const md = require('markdown-it')('commonmark');
+import { Redirect } from 'react-static'
 
-export default withSiteData(withRouteData((props) => (
-	<div>
-		<div dangerouslySetInnerHTML={{ __html: md.render(props.text) }} />
-	</div>
-)))
+export default (props) => (
+	<Redirect to="/intro" />
+)
