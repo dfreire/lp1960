@@ -16,6 +16,7 @@ const App = () => (
 );
 
 const AppContent = withRouter(withSiteData((props) => {
+	// const links = props.links
 	links.forEach(link => link.className = props.location.pathname.startsWith(link.to) ? classes.navLinkActive : classes.navLink);
 
 	return (
@@ -23,12 +24,12 @@ const AppContent = withRouter(withSiteData((props) => {
 			<div className={classes.headerBlock1}>
 				<div className={classes.headerBlock2}>
 					<div className={classes.header}>
-						<div className={classes.navLeft}>
+						<div className={classes.brandContainer}>
 							<Link className={classes.brand} to="/">{props.title}</Link>
 						</div>
-						<ul className={classes.navRight}>
+						<ul className={classes.nav}>
 							{links.map(link => (
-								<li key={link.name} className={classes.navRightItem}>
+								<li key={link.name} className={classes.navItem}>
 									<Link className={link.className} to={link.to}>{link.name}</Link>
 								</li>
 							))}
@@ -55,24 +56,21 @@ const AppContent = withRouter(withSiteData((props) => {
 const classes = {
 	page: "w-full h-full",
 
-	headerBlock1: "bg-grey-lightest pb-4",
-	headerBlock2: "bg-white py-2 shadow-md",
-	header: "container mx-auto p-2 max-w-lg flex items-center",
+	headerBlock1: "bg-grey-lightest pb-2",
+	headerBlock2: "bg-white shadow-md p-2",
+	header: "container mx-auto py-2 max-w-lg sm:flex",
 
-	navLeft: "flex-1 list-reset",
-	navLeftItem: "inline-block mr-8",
+	brandContainer: "sm:flex-1 text-center sm:text-left",
+	brand: "text-black no-underline text-4xl font-black",
 
-	navCenter: "flex-1 text-center",
+	nav: "sm:flex-1 list-reset flex justify-center sm:justify-end mt-4",
+	navItem: "inline-block text-center ml-2",
 
-	navRight: "flex-1 list-reset text-right flex justify-end",
-	navRightItem: "inline-block px-2 text-center",
-
-	brand: "brand text-black no-underline text-4xl font-black",
 	navLink: "no-underline px-3 py-2 lowercase font-light text-grey-dark rounded border border-white hover:border-grey-light",
 	navLinkActive: "no-underline px-3 py-2 lowercase font-light text-grey-lightest bg-blue rounded",
 
-	contentBlock: "contentBlock py-4",
-	content: "container mx-auto px-2 max-w-lg",
+	contentBlock: "contentBlock py-2",
+	content: "container mx-auto max-w-lg",
 
 	footerBlock: "footerBlock bg-grey-darkest w-full py-4",
 	footer: "container mx-auto px-2 max-w-lg text-center",

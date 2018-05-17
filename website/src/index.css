@@ -4887,6 +4887,11 @@ body {
   background-color: #3d4852;
 }
 
+p {
+  padding-top: .5rem;
+  padding-bottom: .75rem;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

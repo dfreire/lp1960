@@ -2,7 +2,12 @@ import React from 'react'
 import { withSiteData, withRouteData } from 'react-static'
 
 export default withSiteData(withRouteData((props) => (
-	<div>
-		<img src={props.src} alt="" />
+	<div className={classes.container}>
+		<img className={classes.img} src={props.src + '?w=800'} alt="" />
 	</div>
 )))
+
+const classes = {
+	container: "p-2 text-center",
+	img: "",
+};
