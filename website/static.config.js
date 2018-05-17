@@ -6,9 +6,9 @@ const config = dotenv.config().parsed;
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${config.DK_API_KEY}`;
 
-
-
 export default {
+	siteRoot: 'https://lp1960.com/',
+
 	getSiteData: async () => {
 		const {
 			data: root
