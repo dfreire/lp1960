@@ -3,11 +3,11 @@ import { Router, Link, withRouter, withSiteData } from 'react-static'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
 
-const links = [
-	{ to: '/intro', name: 'intro' },
-	{ to: '/imagens', name: 'imagens' },
-	{ to: '/projectos', name: 'projectos' },
-];
+// const links = [
+// 	{ to: '/intro', name: 'intro' },
+// 	{ to: '/imagens', name: 'imagens' },
+// 	{ to: '/projectos', name: 'projectos' },
+// ];
 
 const App = () => (
 	<Router>
@@ -16,7 +16,7 @@ const App = () => (
 );
 
 const AppContent = withRouter(withSiteData((props) => {
-	// const links = props.links
+	const links = props.links;
 	links.forEach(link => link.className = props.location.pathname.startsWith(link.to) ? classes.navLinkActive : classes.navLink);
 
 	return (

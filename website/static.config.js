@@ -6,12 +6,42 @@ const config = dotenv.config().parsed;
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${config.DK_API_KEY}`;
 
+
+
 export default {
 	getSiteData: async () => {
 		const {
 			data: root
 		} = await axios.get('https://conteudo.lp1960.com/api/content');
+
+		const {
+			data: introPage
+		} = await axios.get('https://conteudo.lp1960.com/api/content/0-intro');
+
+		const {
+			data: imagesPage
+		} = await axios.get('https://conteudo.lp1960.com/api/content/1-imagens');
+
+		const {
+			data: projectsPage
+		} = await axios.get('https://conteudo.lp1960.com/api/content/2-projectos');
+
+		const links = [{
+				to: '/intro',
+				name: introPage.fields.title_pt,
+			},
+			{
+				to: '/imagens',
+				name: imagesPage.fields.title_pt,
+			},
+			{
+				to: '/projectos',
+				name: projectsPage.fields.title_pt,
+			},
+		];
+
 		return {
+			links,
 			title: root.fields.title_pt,
 		}
 	},
@@ -23,6 +53,7 @@ export default {
 		const {
 			data: imagesPage
 		} = await axios.get('https://conteudo.lp1960.com/api/content/1-imagens');
+
 		const {
 			data: imageDirs
 		} = await axios.get('https://conteudo.lp1960.com/api/dirs/1-imagens');
@@ -30,11 +61,10 @@ export default {
 		const {
 			data: projectsPage
 		} = await axios.get('https://conteudo.lp1960.com/api/content/2-projectos');
+
 		const {
 			data: projectDirs
 		} = await axios.get('https://conteudo.lp1960.com/api/dirs/2-projectos');
-
-		// https://conteudo.lp1960.com/api/files/1-imagens/1-b/brina-blum-275955-unsplash.jpg?w=800
 
 		const imageList = [];
 		for (let i = 0; i < imageDirs.length; i++) {
