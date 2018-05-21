@@ -25,7 +25,7 @@ const Image = (props) => (
 )
 
 const classes = {
-	container: 'flex flex-wrap mb-4',
+	container: 'flex flex-wrap mb-4 py-4',
 	col: 'sm:w-1/2 md:w-1/3',
 	image: 'p-2'
 }

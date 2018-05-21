@@ -8,6 +8,6 @@ export default withSiteData(withRouteData((props) => (
 )))
 
 const classes = {
-	container: "p-2 text-center",
+	container: "px-2 py-8 text-center",
 	img: "",
 };
