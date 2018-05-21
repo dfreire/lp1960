@@ -1,16 +1,16 @@
 const dotenv = require('dotenv')
 const axios = require('axios');
 const path = require('path');
+import Document from'./src/Document';
 
 const config = dotenv.config().parsed;
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${config.DK_API_KEY}`;
 
-console.log('SITE_ROOT', config.SITE_ROOT);
-console.log('DK_SERVER', config.DK_SERVER);
-
 export default {
 	siteRoot: config.SITE_ROOT,
+
+	Document,
 
 	getSiteData: async () => {
 		const {
