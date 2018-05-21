@@ -6,25 +6,28 @@ const config = dotenv.config().parsed;
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${config.DK_API_KEY}`;
 
+console.log('SITE_ROOT', config.SITE_ROOT);
+console.log('DK_SERVER', config.DK_SERVER);
+
 export default {
-	siteRoot: 'https://lp1960.com/',
+	siteRoot: config.SITE_ROOT,
 
 	getSiteData: async () => {
 		const {
 			data: root
-		} = await axios.get('https://conteudo.lp1960.com/api/content');
+		} = await axios.get(`${config.DK_SERVER}/api/content`);
 
 		const {
 			data: introPage
-		} = await axios.get('https://conteudo.lp1960.com/api/content/0-intro');
+		} = await axios.get(`${config.DK_SERVER}/api/content/0-intro`);
 
 		const {
 			data: imagesPage
-		} = await axios.get('https://conteudo.lp1960.com/api/content/1-imagens');
+		} = await axios.get(`${config.DK_SERVER}/api/content/1-imagens`);
 
 		const {
 			data: projectsPage
-		} = await axios.get('https://conteudo.lp1960.com/api/content/2-projectos');
+		} = await axios.get(`${config.DK_SERVER}/api/content/2-projectos`);
 
 		const links = [{
 				to: '/intro',
@@ -48,31 +51,31 @@ export default {
 	getRoutes: async () => {
 		const {
 			data: introPage
-		} = await axios.get('https://conteudo.lp1960.com/api/content/0-intro');
+		} = await axios.get(`${config.DK_SERVER}/api/content/0-intro`);
 
 		const {
 			data: imagesPage
-		} = await axios.get('https://conteudo.lp1960.com/api/content/1-imagens');
+		} = await axios.get(`${config.DK_SERVER}/api/content/1-imagens`);
 
 		const {
 			data: imageDirs
-		} = await axios.get('https://conteudo.lp1960.com/api/dirs/1-imagens');
+		} = await axios.get(`${config.DK_SERVER}/api/dirs/1-imagens`);
 
 		const {
 			data: projectsPage
-		} = await axios.get('https://conteudo.lp1960.com/api/content/2-projectos');
+		} = await axios.get(`${config.DK_SERVER}/api/content/2-projectos`);
 
 		const {
 			data: projectDirs
-		} = await axios.get('https://conteudo.lp1960.com/api/dirs/2-projectos');
+		} = await axios.get(`${config.DK_SERVER}/api/dirs/2-projectos`);
 
 		const imageList = [];
 		for (let i = 0; i < imageDirs.length; i++) {
 			const dir = imageDirs[i];
 			const {
 				data: image
-			} = await axios.get('https://conteudo.lp1960.com/api/content/1-imagens/' + dir);
-			image.baseUrl = 'https://conteudo.lp1960.com/api/files/1-imagens/' + dir;
+			} = await axios.get(`${config.DK_SERVER}/api/content/1-imagens/` + dir);
+			image.baseUrl = `${config.DK_SERVER}/api/files/1-imagens/` + dir;
 			imageList.push(image);
 		}
 
@@ -81,8 +84,8 @@ export default {
 			const dir = projectDirs[i];
 			const {
 				data: image
-			} = await axios.get('https://conteudo.lp1960.com/api/content/2-projectos/' + dir);
-			image.baseUrl = 'https://conteudo.lp1960.com/api/files/2-projectos/' + dir;
+			} = await axios.get(`${config.DK_SERVER}/api/content/2-projectos/` + dir);
+			image.baseUrl = `${config.DK_SERVER}/api/files/2-projectos/` + dir;
 			projectList.push(image);
 		}
 
